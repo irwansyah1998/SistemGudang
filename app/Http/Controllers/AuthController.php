@@ -5,10 +5,44 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use OpenApi\Annotations as OA;
+
+/**
+ * @OA\Info(
+ *     title="API Dokumentasi",
+ *     version="1.0.0",
+ *     description="Dokumentasi API untuk aplikasi Laravel menggunakan Swagger",
+ * )
+ */
 
 class AuthController extends Controller
 {
-    // Metode login
+    /**
+     * @OA\Post(
+     *     path="/api/login",
+     *     summary="Login User",
+     *     tags={"Auth"},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             @OA\Property(property="email", type="string", example="user@example.com"),
+     *             @OA\Property(property="password", type="string", example="your_password"),
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful login",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="token", type="string", example="your_token"),
+     *             @OA\Property(property="user", type="object",
+     *                 @OA\Property(property="id", type="integer", example=1),
+     *                 @OA\Property(property="name", type="string", example="User Name")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(response=401, description="Unauthorized"),
+     * )
+     */
     public function login(Request $request)
     {
         // Validasi input
