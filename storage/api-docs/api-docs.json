@@ -42,7 +42,7 @@
                                     "properties": {
                                         "token": {
                                             "type": "string",
-                                            "example": "your_token"
+                                            "example": "eyJhbGciOiJIUzI1NiIsIn..."
                                         },
                                         "user": {
                                             "properties": {
