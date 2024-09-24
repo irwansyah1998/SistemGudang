@@ -30,3 +30,19 @@ Clone repositori ini ke dalam direktori lokal Anda:
 git clone https://github.com/irwansyah1998/sistem-gudang.git
 cd sistem-gudang
 ```
+
+### 2. Install Dependensi
+
+Jika Anda tidak menggunakan Docker, jalankan perintah berikut untuk menginstal dependensi Laravel:
+
+```bash
+composer install
+```
+
+### 3. Konfigurasi .env
+
+Salin file .env.example ke .env dan sesuaikan pengaturan database:
+
+```bash
+cp .env.example .env
+```
