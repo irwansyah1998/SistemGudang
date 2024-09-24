@@ -14,7 +14,6 @@ use OpenApi\Annotations as OA;
  *     description="Dokumentasi API untuk aplikasi Laravel menggunakan Swagger",
  * )
  */
-
 class AuthController extends Controller
 {
     /**
@@ -25,15 +24,15 @@ class AuthController extends Controller
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
-     *             @OA\Property(property="email", type="string", example="user@example.com"),
-     *             @OA\Property(property="password", type="string", example="your_password"),
+     *             @OA\Property(property="email", type="string", example="user1@example.com"),
+     *             @OA\Property(property="password", type="string", example="password123"),
      *         )
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="Successful login",
      *         @OA\JsonContent(
-     *             @OA\Property(property="token", type="string", example="your_token"),
+     *             @OA\Property(property="token", type="string", example="eyJhbGciOiJIUzI1NiIsIn..."),
      *             @OA\Property(property="user", type="object",
      *                 @OA\Property(property="id", type="integer", example=1),
      *                 @OA\Property(property="name", type="string", example="User Name")
@@ -62,18 +61,31 @@ class AuthController extends Controller
         // Buat token
         $token = $user->createToken('token')->plainTextToken;
 
-        // Kembalikan token dan informasi pengguna (jika diperlukan)
+        // Kembalikan token dan informasi pengguna
         return response()->json([
             'token' => $token,
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
-                // tambahkan data pengguna lain jika diperlukan
             ],
         ]);
     }
 
-    // Metode logout
+    /**
+     * @OA\Post(
+     *     path="/api/logout",
+     *     summary="Logout User",
+     *     tags={"Auth"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful logout",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Logout berhasil"),
+     *         )
+     *     ),
+     *     @OA\Response(response=401, description="Unauthorized"),
+     * )
+     */
     public function logout(Request $request)
     {
         // Cabut token yang sedang digunakan untuk otentikasi

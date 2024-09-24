@@ -21,11 +21,11 @@
                                 "properties": {
                                     "email": {
                                         "type": "string",
-                                        "example": "user@example.com"
+                                        "example": "user1@example.com"
                                     },
                                     "password": {
                                         "type": "string",
-                                        "example": "your_password"
+                                        "example": "password123"
                                     }
                                 },
                                 "type": "object"
@@ -56,6 +56,36 @@
                                                 }
                                             },
                                             "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout User",
+                "operationId": "fe8f3429cd6979b3b4517e186505f9f9",
+                "responses": {
+                    "200": {
+                        "description": "Successful logout",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Logout berhasil"
                                         }
                                     },
                                     "type": "object"
