@@ -46,3 +46,40 @@ Salin file .env.example ke .env dan sesuaikan pengaturan database:
 ```bash
 cp .env.example .env
 ```
+
+Kemudian, buka file .env dan ubah detail koneksi database:
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database
+DB_USERNAME=username
+DB_PASSWORD=password
+```
+
+### 4. Generate Key Aplikasi
+
+Jalankan perintah berikut untuk mengenerate aplikasi key:
+
+```bash
+php artisan key:generate
+```
+
+### 5. Migrasi Database
+
+Jalankan migrasi untuk membuat tabel di database:
+
+```bash
+php artisan migrate
+```
+
+### 6. Menjalankan Aplikasi
+
+Jika Anda tidak menggunakan Docker, Anda bisa menjalankan aplikasi menggunakan server built-in Laravel:
+
+```bash
+php artisan serve
+```
+
+Aplikasi akan berjalan di http://localhost:8000.
