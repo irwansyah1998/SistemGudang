@@ -27,6 +27,6 @@ Sebelum memulai, pastikan Anda memiliki:
 Clone repositori ini ke dalam direktori lokal Anda:
 
 ```bash
-git clone https://github.com/username/sistem-gudang.git
+git clone https://github.com/irwansyah1998/sistem-gudang.git
 cd sistem-gudang
 ```
