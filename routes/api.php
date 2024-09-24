@@ -20,5 +20,4 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('barangs', BarangController::class);
     Route::apiResource('mutasis', MutasiController::class);
-    // Tambahkan endpoint untuk history mutasi di sini
 });
