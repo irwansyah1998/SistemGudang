@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function mutasis()
+    {
+        return $this->hasMany(Mutasi::class);
+    }
+    
     /**
      * The attributes that are mass assignable.
      *
