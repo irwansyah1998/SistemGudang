@@ -29,7 +29,7 @@ Clone repositori ini ke dalam direktori lokal Anda:
 
 ```bash
 git clone https://github.com/irwansyah1998/sistem-gudang.git
-cd sistem-gudang
+cd SistemGudang
 ```
 
 ### 2. Install Dependensi
