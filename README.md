@@ -9,6 +9,7 @@ Sistem Gudang adalah aplikasi berbasis web yang dibangun dengan Laravel 10 untuk
 - Riwayat mutasi untuk setiap barang
 - Riwayat mutasi untuk setiap pengguna
 - Output data dalam format JSON
+- LSwagger Documentation
 
 ## Prasyarat
 
@@ -83,3 +84,11 @@ php artisan serve
 ```
 
 Aplikasi akan berjalan di http://localhost:8000.
+
+## Dokumentasi
+
+Untuk dokumentasi akan berjalan pada :
+
+```bash
+http://localhost:8000/api/documentation
+```
