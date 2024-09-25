@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use OpenApi\Annotations as OA;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use OpenApi\Annotations as OA;
 
 /**
  * @OA\Info(
  *     title="API Dokumentasi",
  *     version="1.0.0",
- *     description="Dokumentasi API untuk aplikasi Laravel menggunakan Swagger",
+ *     description="Dokumentasi API untuk aplikasi Laravel menggunakan Swagger"
  * )
  */
+
+ 
 class AuthController extends Controller
 {
     /**
@@ -71,21 +73,7 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * @OA\Post(
-     *     path="/api/logout",
-     *     summary="Logout User",
-     *     tags={"Auth"},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful logout",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="message", type="string", example="Logout berhasil"),
-     *         )
-     *     ),
-     *     @OA\Response(response=401, description="Unauthorized"),
-     * )
-     */
+
     public function logout(Request $request)
     {
         // Cabut token yang sedang digunakan untuk otentikasi

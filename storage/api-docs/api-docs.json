@@ -69,32 +69,29 @@
                 }
             }
         },
-        "/api/logout": {
-            "post": {
+        "/api/barangs/{id}": {
+            "delete": {
                 "tags": [
-                    "Auth"
+                    "Barangs"
                 ],
-                "summary": "Logout User",
-                "operationId": "fe8f3429cd6979b3b4517e186505f9f9",
-                "responses": {
-                    "200": {
-                        "description": "Successful logout",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "example": "Logout berhasil"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
+                "summary": "Delete a barang",
+                "operationId": "0867eedfc29515857894c1c8e00f531c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
                         }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Barang deleted"
                     },
-                    "401": {
-                        "description": "Unauthorized"
+                    "404": {
+                        "description": "Barang not found"
                     }
                 }
             }
@@ -104,6 +101,10 @@
         {
             "name": "Auth",
             "description": "Auth"
+        },
+        {
+            "name": "Barangs",
+            "description": "Barangs"
         }
     ]
 }
